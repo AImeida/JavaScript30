@@ -1,21 +1,32 @@
+
 html {
   font-size: 10px;
-  background: url('./furacao2000.jpg') bottom center;
+  background: url('img/furacao2000.jpg') top no-repeat;
   background-size: cover;
-}
-
-body, html {
+  min-height: auto;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  /* border: 1px solid red; */
+}
+
+body {
   font-family: sans-serif;
+  margin-top: 170px;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid rgb(255, 196, 0); */
 }
 
 .keys {
-  display: flex;
-  flex: 1;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
+  /* margin-top: 30vh; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  /* flex: 1; */
+  /* border: 1px solid rgb(4, 0, 255); */
 }
 
 .key {
@@ -30,6 +41,13 @@ body, html {
   color: #22fbbf;
   background: rgba(0,0,0,0.4);
   text-shadow: 0 0 .5rem black;
+}
+
+.key:last-child {
+  /* background-color: violet; */
+  grid-column: 2 / 3;
+  justify-self: center;
+  
 }
 
 .playing {
