@@ -32,9 +32,10 @@ function displayMatches() { // e.g. 'new' is typed -> displayMatches('new')
 		return `
 			<li>
 				<span class="name">${cityName}, ${stateName}</span>
-				<span class="population">${numberWithCommas(place.population)}</span>
+				<span class="population">${new Intl.NumberFormat('de-DE').format(place.population)}</span> 
 			</li>
 		`
+		// new Intl.NumberFormat('de-DE').format(number) turns number into 3.421.360 kind of format
 	}).join('') // map returns array. join('') translates it into string
 
 	// show stuff on screen
@@ -60,7 +61,7 @@ function findMatches(wordToMatch, cities){ // e.g. findMatches('new', cities)
 	})
 }
 
-// formats number
-function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-}
+// formats number [substituted by ]
+// function numberWithCommas(x) {
+//   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+// }
